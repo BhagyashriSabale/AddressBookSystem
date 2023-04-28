@@ -6,9 +6,8 @@
         {
             Console.WriteLine("Welcome to Address Book System Problem");
 
-            List<CreateContacts> contacts = new List<CreateContacts>();
+            AddContacts addContacts = new AddContacts();
 
-            
             Console.WriteLine("Enter contact information:");
             CreateContacts newContact = new CreateContacts();
             Console.Write("First Name: ");
@@ -27,19 +26,9 @@
             newContact.PhoneNumber = Console.ReadLine();
             Console.Write("Email: ");
             newContact.Email = Console.ReadLine();
-            contacts.Add(newContact);
+            addContacts.AddContact(newContact);
 
-            // Display all contacts
-            Console.WriteLine("\nAll Contacts:");
-            foreach (CreateContacts contact in contacts)
-            {
-                Console.WriteLine($"{contact.FirstName} {contact.LastName}");
-                Console.WriteLine(contact.Address);
-                Console.WriteLine($"{contact.City}, {contact.State} {contact.ZipCode}");
-                Console.WriteLine($"Phone: {contact.PhoneNumber}");
-                Console.WriteLine($"Email: {contact.Email}");
-                Console.WriteLine();
-            }
+            addContacts.DisplayAllContacts();
 
             Console.ReadLine();
         }
