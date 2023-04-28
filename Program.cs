@@ -30,6 +30,16 @@
 
             addContacts.DisplayAllContacts();
 
+            Console.WriteLine("Enter the name of the contact to edit:");
+            Console.Write("First Name: ");
+            string firstName = Console.ReadLine();
+            Console.Write("Last Name: ");
+            string lastName = Console.ReadLine();
+
+            addContacts.EditContact(firstName, lastName);
+
+            addContacts.DisplayAllContacts();
+
             Console.ReadLine();
         }
     }
