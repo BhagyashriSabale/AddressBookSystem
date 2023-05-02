@@ -45,6 +45,28 @@ namespace AddressBookSystem
 
             Console.WriteLine("Contact updated successfully.");
         }
+        public void DeleteContact(string firstName, string lastName)
+        {
+            CreateContacts contactToDelete = null;
+
+            foreach (CreateContacts contact in contacts)
+            {
+                if (contact.FirstName == firstName && contact.LastName == lastName)
+                {
+                    contactToDelete = contact;
+                    break;
+                }
+            }
+
+            if (contactToDelete == null)
+            {
+                Console.WriteLine("Contact not found.");
+                return;
+            }
+
+            contacts.Remove(contactToDelete);
+            Console.WriteLine("Contact deleted successfully.");
+        }
 
         public void DisplayAllContacts()
         {

@@ -38,6 +38,8 @@
 
             addContacts.EditContact(firstName, lastName);
 
+            addContacts.DeleteContact(firstName, lastName);
+
             addContacts.DisplayAllContacts();
 
             Console.ReadLine();
